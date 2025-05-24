@@ -1,126 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viralo - Productos virales cada 15 días</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff8e1;
-      color: #333;
-    }
-    header {
-      background-color: #ff5252;
-      padding: 1rem;
-      color: white;
-      text-align: center;
-    }
-    .timer {
-      font-size: 1.5rem;
-      margin: 1rem auto;
-      text-align: center;
-      color: #d84315;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .product {
-      border: 2px solid #ffc107;
-      border-radius: 10px;
-      padding: 1rem;
-      background: #fffde7;
-      text-align: center;
-    }
-    .product img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .product button {
-      margin-top: 1rem;
-      background: #ffca28;
-      color: #000;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background-color: #ffe082;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viralo - Productos Virales Cada 15 Días</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>🔥 VIRALO 🔥</h1>
-    <p>¡Productos virales solo por 15 días!</p>
-  </header>
+    <header>
+        <h1>🔥 Viralo</h1>
+        <p>Productos virales cada 15 días. ¡No te los pierdas!</p>
+    </header>
 
-  <div class="timer">
-    ⏳ Cambiamos el catálogo en: <span id="countdown"></span>
-  </div>
+    <section id="temporizador">
+        <h2>🕒 Próxima actualización en:</h2>
+        <div id="countdown">Cargando...</div>
+    </section>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Producto 1">
-      <h3>Mini proyector portátil</h3>
-      <p>Convierte cualquier pared en cine en segundos.</p>
-      <button onclick="window.open('https://www.paypal.com/paypalme/viralo/49.99')">Comprar 49,99€</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Producto 2">
-      <h3>Lámpara galaxia 3D</h3>
-      <p>Una lámpara mágica con 16 colores diferentes.</p>
-      <button onclick="window.open('https://www.paypal.com/paypalme/viralo/29.99')">Comprar 29,99€</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/300x200" alt="Producto 3">
-      <h3>Soporte plegable para móvil</h3>
-      <p>Ideal para TikTok, videollamadas o estudiar.</p>
-      <button onclick="window.open('https://www.paypal.com/paypalme/viralo/14.99')">Comprar 14,99€</button>
-    </div>
-  </section>
+    <section class="categoria">
+        <h2>🧥 Moda</h2>
+        <div class="productos" id="moda"></div>
+    </section>
 
-  <footer>
-    © 2025 Viralo | Todos los derechos reservados | Contacto: hola@viralo.es
-  </footer>
+    <section class="categoria">
+        <h2>📱 Gadgets</h2>
+        <div class="productos" id="gadgets"></div>
+    </section>
 
-  <script>
-    // Temporizador regresivo cada 15 días
-    function getNextCycleDate() {
-      const start = new Date('2025-05-17T00:00:00');
-      const now = new Date();
-      const msPerCycle = 15 * 24 * 60 * 60 * 1000;
-      let next = new Date(start);
-      while (next < now) {
-        next = new Date(next.getTime() + msPerCycle);
-      }
-      return next;
-    }
+    <section class="categoria">
+        <h2>💻 Tecnología</h2>
+        <div class="productos" id="tecnologia"></div>
+    </section>
 
-    const countdown = document.getElementById("countdown");
-    function updateTimer() {
-      const end = getNextCycleDate();
-      const now = new Date();
-      const distance = end - now;
+    <footer>
+        <p>© 2025 Viralo. Todos los derechos reservados.</p>
+    </footer>
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-    setInterval(updateTimer, 1000);
-  </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

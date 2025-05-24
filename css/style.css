@@ -1,0 +1,31 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #111;
+    text-align: center;
+    padding: 1em;
+}
+header {
+    background: linear-gradient(to right, red, yellow);
+    padding: 1em;
+    color: white;
+}
+#temporizador {
+    margin: 20px 0;
+    font-size: 1.5em;
+}
+.categoria {
+    margin-top: 2em;
+}
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    padding: 1em;
+}
+.producto {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 1em;
+}
