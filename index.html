@@ -8,13 +8,43 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🔥 VIRALO - Productos de Moda, Gadgets y Tecnología</h1>
-  <div class="contador">
-    🛒 <strong id="reservas-disponibles">100</strong> compras reservadas disponibles hoy
-  </div>
-  <br/>
-  <button onclick="reservarCompra()">Reservar mi compra</button>
-  <p id="mensaje-reserva"></p>
+  <header>
+    <h1>🔥 VIRALO</h1>
+    <p>Descubre los 9 productos más virales del momento</p>
+    <div class="reserva-info">
+      🛒 Quedan <strong id="reservas-disponibles">100</strong> compras reservadas hoy
+    </div>
+  </header>
+
+  <main>
+    <section class="categoria">
+      <h2>👕 Moda</h2>
+      <div class="producto">Producto de moda 1</div>
+      <div class="producto">Producto de moda 2</div>
+      <div class="producto">Producto de moda 3</div>
+    </section>
+
+    <section class="categoria">
+      <h2>🔌 Gadgets</h2>
+      <div class="producto">Gadget 1</div>
+      <div class="producto">Gadget 2</div>
+      <div class="producto">Gadget 3</div>
+    </section>
+
+    <section class="categoria">
+      <h2>💻 Tecnología</h2>
+      <div class="producto">Tecnología 1</div>
+      <div class="producto">Tecnología 2</div>
+      <div class="producto">Tecnología 3</div>
+    </section>
+
+    <button onclick="reservarCompra()">Reservar mi compra</button>
+    <p id="mensaje-reserva"></p>
+  </main>
+
+  <footer>
+    <p>© 2025 Viralo. Todos los derechos reservados.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
