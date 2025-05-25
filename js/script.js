@@ -1,4 +1,3 @@
-
 let maxReservas = 100;
 
 let reservas = localStorage.getItem('reservasDiarias');
