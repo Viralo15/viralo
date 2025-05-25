@@ -2,41 +2,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viralo - Productos Virales Cada 15 Días</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Viralo - Productos Virales</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🔥 Viralo</h1>
-        <p>Productos virales cada 15 días. ¡No te los pierdas!</p>
-    </header>
+  <h1>🔥 VIRALO - Productos de Moda, Gadgets y Tecnología</h1>
+  <div class="contador">
+    🛒 <strong id="reservas-disponibles">100</strong> compras reservadas disponibles hoy
+  </div>
+  <br/>
+  <button onclick="reservarCompra()">Reservar mi compra</button>
+  <p id="mensaje-reserva"></p>
 
-    <section id="temporizador">
-        <h2>🕒 Próxima actualización en:</h2>
-        <div id="countdown">Cargando...</div>
-    </section>
-
-    <section class="categoria">
-         <h2>📱 Gadgets</h2>
-        <div class="productos" id="gadgets"></div>       
-    </section>
-
-    <section class="categoria">
-        <h2>💻 Tecnología</h2>
-        <div class="productos" id="tecnologia"></div>
-    </section>
-
-    <section class="categoria">
-        <h2>🧥 Moda</h2>
-        <div class="productos" id="moda"></div>
-    </section>
-
-    <footer>
-        <p>© 2025 Viralo. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
