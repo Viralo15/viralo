@@ -1,25 +1,23 @@
 
-const countdownElement = document.getElementById("countdown");
-const nextUpdate = new Date();
-nextUpdate.setDate(nextUpdate.getDate() + (14 - (new Date().getDate() % 14)));
-nextUpdate.setHours(0, 0, 0, 0);
+let maxReservas = 100;
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = nextUpdate - now;
-
-    if (distance < 0) {
-        countdownElement.innerHTML = "¡Actualización disponible!";
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+let reservas = localStorage.getItem('reservasDiarias');
+if (reservas === null) {
+  reservas = maxReservas;
+  localStorage.setItem('reservasDiarias', reservas);
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+document.getElementById('reservas-disponibles').textContent = reservas;
+
+function reservarCompra() {
+  let actuales = parseInt(localStorage.getItem('reservasDiarias'));
+
+  if (actuales > 0) {
+    actuales -= 1;
+    localStorage.setItem('reservasDiarias', actuales);
+    document.getElementById('reservas-disponibles').textContent = actuales;
+    document.getElementById('mensaje-reserva').innerText = "✅ ¡Compra reservada! Nos pondremos en contacto por correo.";
+  } else {
+    document.getElementById('mensaje-reserva').innerText = "❌ Se han alcanzado las 100 reservas de hoy. Vuelve mañana.";
+  }
+}
